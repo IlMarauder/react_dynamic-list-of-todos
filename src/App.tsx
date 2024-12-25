@@ -53,9 +53,9 @@ export const App: React.FC = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [loading, setLoading] = useState(false);
 
-  const [select, setSelect] = useState(0);
+  const [select, setSelect] = useState<number | undefined>();
 
-  const [filter, setFilter] = useState('All');
+  const [filter, setFilter] = useState('all');
   const [query, setQuery] = useState('');
 
   useEffect(() => {
@@ -98,8 +98,8 @@ export const App: React.FC = () => {
         </div>
       </div>
 
-      {select !== 0 && (
-        <TodoModal todos={todos} select={select} setSelect={setSelect} />
+      {select && (
+        <TodoModal todos={visibleTodos} select={select} setSelect={setSelect} />
       )}
     </>
   );

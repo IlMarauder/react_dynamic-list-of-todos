@@ -4,7 +4,7 @@ import cn from 'classnames';
 
 type Props = {
   todos: Todo[];
-  select: number;
+  select?: number;
   setSelect: (select: number) => void;
 };
 

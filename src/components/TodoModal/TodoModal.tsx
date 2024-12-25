@@ -6,8 +6,8 @@ import { User } from '../../types/User';
 
 type Props = {
   todos: Todo[];
-  select: number;
-  setSelect: (select: number) => void;
+  select?: number;
+  setSelect: (select?: number) => void;
 };
 
 export const TodoModal: React.FC<Props> = ({ todos, select, setSelect }) => {
@@ -51,7 +51,7 @@ export const TodoModal: React.FC<Props> = ({ todos, select, setSelect }) => {
                     type="button"
                     className="delete"
                     data-cy="modal-close"
-                    onClick={() => setSelect(0)}
+                    onClick={() => setSelect(undefined)}
                   />
                 </header>
 
